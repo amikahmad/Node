@@ -8,6 +8,7 @@ var http = require("http"),
 // response = data sent down from server
 var server = http.createServer(function(request,response){
     // response header descibes the content we dispatch
+    // the next three lines only run when you navigate to the local host - you cause an event - so the event loop initiates - then node goes back to what it was doing before  and stays lean and mean.
     response.writeHeader(200, {"Content-Type": "text/plain"});
     // write the response to the client
     response.write("Hello HTTP!");
